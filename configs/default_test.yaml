@@ -1,0 +1,13 @@
+MODEL:
+  base_num: 48
+  in_chns: 1
+  pretrained_path: "./checkpoint/pretrained.pkl"
+DATASET:
+  test_volume_path: "./data/CBCT/test/img"
+  test_para_path: "./data/CBCT/test/para"
+  template_volume_path: "./data/CBCT/test/img/Ref.mha"
+  template_para_path: "./data/CBCT/test/para/Ref.mat"
+ENGINE:
+  save_dir: "./results"
+  device: 0
+

@@ -1,0 +1,40 @@
+MODEL:
+  base_num: 48
+  in_chns: 1
+  pretrained: 0
+  pretrained_path: "./checkpoints/pretrained.pkl"
+DATASET:
+  real_volume_train_path: "./data/CBCT/train/img"
+  real_para_train_path: "./data/CBCT/train/para"
+  real_volume_valid_path: "./data/CBCT/valid/img"
+  real_para_valid_path: "./data/CBCT/valid/para"
+  syn_folder_train_path: "./data/CBCT/syn"
+  syn_folder_valid_path: "./data/CBCT/synval"
+ENGINE:
+  epoch: 100
+  train_real: 1
+  real_start_epoch: 0
+  real_end_epoch: 100
+  train_syn: 1
+  syn_start_epoch: 0
+  syn_end_epoch: 100
+  save_model_epoch: 200
+  real_plot_step: 200
+  syn_plot_step: 200
+  real_log_step: 200
+  syn_log_step: 200
+  device: 0
+OPTIM:
+  lr: 0.0001
+  beta1: 0.9
+  beta2: 0.999
+  reg_w: 1.0e-2
+  scheduler: 1
+WEIGHTS:
+  lambda_emb: 10.0
+  lambda_C_reg: 1.0
+  lambda_C_align: 1.0
+  lambda_cycle: 1.0
+  lambda_intri: 1.0
+  lambda_syn: 10.0
+  lambda_real: 1.0
